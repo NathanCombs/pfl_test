@@ -32,7 +32,7 @@ class App extends Component {
   async addToCart(product) {
     try {
       this.setState({ productInCart: product })
-      await axios.post('http://localhost:5000/getProductDetails', { productID: product.productID })
+      await axios.post('/getProductDetails', { productID: product.productID })
         .then((response) => {
           this.setState({ productDetails: response.data.results.data })
         })

@@ -10,7 +10,7 @@ export default class StartButton extends Component {
     }
 
     getProducts() {
-        axios.get('http://localhost:5000/getProducts', { method: 'GET' })
+        axios.get('/getProducts', { method: 'GET' })
         .then((response) => {
             this.props.setProductData(response.data)
             this.props.toggleContent()

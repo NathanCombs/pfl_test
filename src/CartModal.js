@@ -26,7 +26,7 @@ export default class CartModal extends Component {
     }
 
     placeOrder() {
-        axios.post('http://localhost:5000/placeOrder', { productID: this.props.productInCart.productID, templateData: this.state.templateData })
+        axios.post('/placeOrder', { productID: this.props.productInCart.productID, templateData: this.state.templateData })
             .then((response) => {
                 this.setState({
                     orderNumber: response.data,

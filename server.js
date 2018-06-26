@@ -19,7 +19,11 @@ app.use(cors())
 
 
 app.listen(process.env.PORT || 5000, () => {
-    console.log(`Server started on port 5000`)
+    console.log(`Server started`)
+})
+
+app.get("/", (req, res) => {
+    res.sendfile("index.html")
 })
 
 app.get("/getProducts", (req, res) => {
