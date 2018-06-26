@@ -1,0 +1,20 @@
+.App {
+  text-align: center;
+}
+
+.Background {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+
+.Cart {
+  z-index: 1;
+  position: fixed;
+  margin-left: 89vw;
+  width: 10vw;
+  font-size: .75em;
+  font-family: 'Oswald';
+  background: white;
+}
