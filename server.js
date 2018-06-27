@@ -97,7 +97,10 @@ app.post('/placeOrder', (req, res) => {
                     "itemSequenceNumber": 1,
                     "productID": req.body.productID,
                     "quantity": 1000,
-                    "templateData": req.body.templateData,
+                    // This line of code causes a 400 if the req.body is an object (if null everything works). 
+                    // The format of the object must be incorrect, and although I tried a couple different ways, 
+                    // I was never able to post with this data successfully. 
+                    // "templateData": req.body.templateData,
                     "partnerItemReference": "MyItemReferenceID",
                     "itemFile": "http://www.yourdomain.com/files/printReadyArtwork1.pdf"
                 }
