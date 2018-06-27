@@ -1,8 +1,14 @@
 Requires Node.js and React.js.
 
+https://nodejs.org/en/download/
+
+$ npm install create-react-app
+
 Run $ npm install in the project directory to install dependencies.
 
-Run $ npm start to run locally. 
+Run $ node server.js to run server locally.
+
+Run $ npm start to run client locally. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 

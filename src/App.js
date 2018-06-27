@@ -5,7 +5,7 @@ import ProductList from './ProductList/ProductList';
 import CartModal from './CartModal';
 import './App.css';
 
-class App extends Component {
+export default class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -32,7 +32,7 @@ class App extends Component {
   async addToCart(product) {
     try {
       this.setState({ productInCart: product })
-      await axios.post('/getProductDetails', { productID: product.productID })
+      await axios.post('http://localhost:5000/getProductDetails', { productID: product.productID })
         .then((response) => {
           this.setState({ productDetails: response.data.results.data })
         })
@@ -47,11 +47,10 @@ class App extends Component {
   }
 
   render() {
+
     var content;
     if (this.state.showProductList) {
-      content = <div>
-        <ProductList productData={this.state.productData} addToCart={this.addToCart} />
-      </div>
+      content = <ProductList productData={this.state.productData} addToCart={this.addToCart} />
     } else {
       content = <StartButton setProductData={this.setProductData} toggleContent={this.toggleContent} />
     }
@@ -67,5 +66,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

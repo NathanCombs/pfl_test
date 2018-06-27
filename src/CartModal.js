@@ -22,11 +22,12 @@ export default class CartModal extends Component {
     }
 
     updateTemplateData(newData) {
+        //used in CartDisplay.js if a product contains template fields
         this.setState({ templateData: newData })
     }
 
     placeOrder() {
-        axios.post('/placeOrder', { productID: this.props.productInCart.productID, templateData: this.state.templateData })
+        axios.post('http://localhost:5000/placeOrder', { productID: this.props.productInCart.productID, templateData: this.state.templateData })
             .then((response) => {
                 this.setState({
                     orderNumber: response.data,
@@ -36,6 +37,7 @@ export default class CartModal extends Component {
     }
 
     closeModal() {
+        //closes the shopping cart modal and resets cart related data so that the user can continue shopping.
         this.toggle()
         this.setState({
             orderSuccess: false,

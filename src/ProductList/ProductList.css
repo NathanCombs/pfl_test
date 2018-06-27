@@ -5,13 +5,11 @@
     margin: 25px;
     margin-top: 0;
     background-color: rgba(225, 225, 225, .8);
-    
 }
 
 .productImage {
     max-height: 200px;
     padding-right: 50px;
-    padding-left: 50px;
 }
 
 .productInfo {

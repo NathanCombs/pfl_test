@@ -10,6 +10,9 @@ export default class ProductList extends Component {
         }
     }
 
+//renders a product card containing product image, name, and add to cart button for each object in the 
+//productData array fetched from the API
+
     render() {
         return this.props.productData.map((value, index) => {
             return (

@@ -10,6 +10,7 @@ var allowCrossDomain = function (req, res, next) {
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 }
+const PORT = process.env.PORT || 5000;
 
 app.use(express.static(path.join(__dirname, "build")));
 app.use(bodyParser.json({ type: 'application/json' }));
@@ -18,8 +19,8 @@ app.use(allowCrossDomain);
 app.use(cors())
 
 
-app.listen(process.env.PORT || 5000, () => {
-    console.log(`Server started`)
+app.listen(PORT, () => {
+    console.log(`Server started on ${PORT}`)
 })
 
 app.get("/", (req, res) => {
@@ -69,7 +70,6 @@ app.post("/getProductDetails", (req, res) => {
 })
 
 app.post('/placeOrder', (req, res) => {
-    console.log(req.body.templateData)
     axios('https://testapi.pfl.com/orders?apikey=136085', {
         method: 'POST',
         headers: {
